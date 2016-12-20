@@ -13,15 +13,10 @@ public class Main {
             Spark.port(Integer.valueOf(port));
         }
 
+        Spark.before((request, response) -> {
+            response.header("Access-Control-Allow-Origin", "*");
+        });
 
-        Spark.get("/", (request, response) -> "Hello World!");
-
-        if(port !=null){
-
-        }
-
-        Spark.before(((request, response) -> {response.header("Access-Control-Allow-Origin", "*");}));
-
-
+        Spark.get("/", ((request, response) -> "Hello, World!"));
     }
 }
