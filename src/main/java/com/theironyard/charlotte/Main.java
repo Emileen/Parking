@@ -31,6 +31,7 @@ public class Main {
         parkingSpot.add(new ParkingLot(2, 15, 7.00));
         parkingSpot.add(new ParkingLot(3, 15, 10.00));
         parkingSpot.add(new ParkingLot(4, 15, 12.00));
+        parkingSpot.add(new ParkingLot(4,13,15.00));
 
 
         Spark.get("/lots", (request, response) -> {
