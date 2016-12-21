@@ -7,25 +7,32 @@ import java.util.ArrayList;
  */
 public class ParkingLot {
 
-    int id;
-    int capacity;
-    double rate;
     ArrayList<Vehicle> vehicle = new ArrayList<>();
+    int capacity;
+    int id;
+    double rate;
 
-    public ParkingLot(int id, int capacity, double rate) {
-        this.id = id;
+    public ParkingLot(int capacity, int id, double rate) {
         this.capacity = capacity;
+        this.id = id;
         this.rate = rate;
     }
 
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
+    /*public ParkingLot(ArrayList<Vehicle> vehicle, int capacity, int id, double rate) {
+        this.vehicle = vehicle;
+        this.capacity = capacity;
         this.id = id;
+        this.rate = rate;
+
     }
+
+    public ArrayList<Vehicle> getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(ArrayList<Vehicle> vehicle) {
+        this.vehicle = vehicle;
+    }*/
 
     public int getCapacity() {
         return capacity;
@@ -35,6 +42,14 @@ public class ParkingLot {
         this.capacity = capacity;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public double getRate() {
         return rate;
     }
@@ -42,6 +57,4 @@ public class ParkingLot {
     public void setRate(double rate) {
         this.rate = rate;
     }
-
-
 }

@@ -4,9 +4,8 @@ package com.theironyard.charlotte;
  * Created by emileenmarianayagam on 12/20/16.
  */
 public class Vehicle {
-
-    String mode;
     String make;
+    String model;
     int size;
     double cost;
     int id;
@@ -20,20 +19,20 @@ public class Vehicle {
     }
 
 
-    public String getMode() {
-        return mode;
-    }
-
-    public void setMode(String mode) {
-        this.mode = mode;
-    }
-
     public String getMake() {
         return make;
     }
 
     public void setMake(String make) {
         this.make = make;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public int getSize() {
@@ -51,5 +50,6 @@ public class Vehicle {
     public void setCost(double cost) {
         this.cost = cost;
     }
+
 
 }
