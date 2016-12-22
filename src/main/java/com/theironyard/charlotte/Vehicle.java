@@ -4,11 +4,11 @@ package com.theironyard.charlotte;
  * Created by emileenmarianayagam on 12/20/16.
  */
 public class Vehicle {
-    String make;
-    String model;
-    int size;
-    double cost;
-    int id;
+    private String make;
+    private String model;
+    private int size;
+    private int cost;
+    private int id;
 
     public int getId() {
         return id;
@@ -43,11 +43,11 @@ public class Vehicle {
         this.size = size;
     }
 
-    public double getCost() {
+    public int getCost() {
         return cost;
     }
 
-    public void setCost(double cost) {
+    public void setCost(int cost) {
         this.cost = cost;
     }
 

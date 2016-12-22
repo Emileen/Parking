@@ -7,40 +7,18 @@ import java.util.ArrayList;
  */
 public class ParkingLot {
 
-    ArrayList<Vehicle> vehicle = new ArrayList<>();
-    int capacity;
-    int id;
-    double rate;
+    private int id;
+    private int capacity;
+    private int rate;
+    private ArrayList<Vehicle> vehicle = new ArrayList<>();
 
-    public ParkingLot(int capacity, int id, double rate) {
-        this.capacity = capacity;
+    public ParkingLot(int id, int capacity, int rate, ArrayList<Vehicle> vehicle) {
         this.id = id;
-        this.rate = rate;
-    }
-
-    /*public ParkingLot(ArrayList<Vehicle> vehicle, int capacity, int id, double rate) {
-        this.vehicle = vehicle;
         this.capacity = capacity;
-        this.id = id;
         this.rate = rate;
-
-    }
-
-    public ArrayList<Vehicle> getVehicle() {
-        return vehicle;
-    }
-
-    public void setVehicle(ArrayList<Vehicle> vehicle) {
         this.vehicle = vehicle;
-    }*/
-
-    public int getCapacity() {
-        return capacity;
     }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
+    public ParkingLot(){}
 
     public int getId() {
         return id;
@@ -50,11 +28,27 @@ public class ParkingLot {
         this.id = id;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
     public double getRate() {
         return rate;
     }
 
-    public void setRate(double rate) {
+    public void setRate(int rate) {
         this.rate = rate;
+    }
+
+    public ArrayList<Vehicle> getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(ArrayList<Vehicle> vehicle) {
+        this.vehicle = vehicle;
     }
 }

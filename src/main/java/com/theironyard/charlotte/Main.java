@@ -11,11 +11,21 @@ public class Main {
 
 
     private static ArrayList<ParkingLot> parkingSpot = new ArrayList<>();
-    //private static ArrayList<Vehicle> vehicles = new ArrayList<>();
+
+
+
+
     private static JsonParser parser = new JsonParser();
     private static JsonSerializer serializer = new JsonSerializer();
 
     public static void main(String[] args) {
+
+        ArrayList<Vehicle> vehiclesLot1 = new ArrayList<>();
+        ArrayList<Vehicle> vehiclesLot2 = new ArrayList<>();
+        ArrayList<Vehicle> vehiclesLot3 = new ArrayList<>();
+        ArrayList<Vehicle> vehiclesLot4 = new ArrayList<>();
+
+
         String port = System.getenv("PORT");
 
         if (port != null) {
@@ -32,10 +42,10 @@ public class Main {
 
 
         //create the lot
-        parkingSpot.add(new ParkingLot(1, 15, 5.00));
-        parkingSpot.add(new ParkingLot(2, 15, 7.00));
-        parkingSpot.add(new ParkingLot(3, 15, 10.00));
-        parkingSpot.add(new ParkingLot(4, 15, 12.00));
+        parkingSpot.add(new ParkingLot(1, 15, 5,vehiclesLot1));
+        parkingSpot.add(new ParkingLot(2, 15, 7,vehiclesLot2));
+        parkingSpot.add(new ParkingLot(3, 15, 10,vehiclesLot3));
+        parkingSpot.add(new ParkingLot(4, 15, 12,vehiclesLot4));
 
 
 
@@ -43,7 +53,7 @@ public class Main {
         //shows the lots that are there populated with info
         Spark.get("/lots", (request, response) -> {
             System.out.println("Here are the available lots");
-            return serializer.serialize(parkingSpot);
+            return serializer.deep(true).serialize(parkingSpot);
 
         });
 
@@ -57,18 +67,19 @@ public class Main {
             //for every lot in the array parkingSpot check
             for (ParkingLot lot : parkingSpot) {
                 //the id from the parkinglot needs to match the id from the vehile lote
-                if (lot.id == newVehicle.getId()) {
+                if (lot.getId() == newVehicle.getId()) {
                     //get the size of the vehicle and times it by the rate of the parkingspot and if its less than or
                     //equal to their rate && their vehicle size is less than equal to the capacity park
                     // then subtract the size of the vehilce from the capacity
-                    if (lot.getRate() * newVehicle.getSize() <= newVehicle.getCost() && newVehicle.getSize() <= lot.capacity) {
-                        lot.setCapacity(lot.capacity - newVehicle.getSize());
+                    if (lot.getRate() * newVehicle.getSize() <= newVehicle.getCost() && newVehicle.getSize() <= lot.getCapacity()) {
+                        lot.setCapacity(lot.getCapacity() - newVehicle.getSize());
                         System.out.println("you have a parking spot");
 
                         //adds the vehicle to the specified id lot in the parkinglot
-                        lot.vehicle.add(lot.id, newVehicle);
 
-                        System.out.println(lot.vehicle.get(lot.id) + " " +  lot.getCapacity());
+                        lot.getVehicle().add(lot.getId(), newVehicle);
+
+                        System.out.println(lot.getVehicle().get(lot.getId()) + " " +  lot.getCapacity());
                         //display the vehicle that that is in the car list along with the remaining spots.
 
 
