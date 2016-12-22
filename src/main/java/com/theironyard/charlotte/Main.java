@@ -34,9 +34,6 @@ public class Main {
         Spark.before((request, response) -> {
             response.header("Access-Control-Allow-Origin", "*");
         });
-        //create an arraylist for each lost
-        //vehicles.add();
-
 
         //create the lot
         parkingSpot.add(new ParkingLot(1, 15, 5, vehiclesLot1));
@@ -74,30 +71,13 @@ public class Main {
                         lot.addVehicleToLot(newVehicle);
 
                         return lot.toString();
-
-
-                        //return lot.toString();
-
-                        //return serializer.deep(true).serialize(lot.getVehicle());
-
-
-                        //lot.getVehicle().add(lot.getId(), newVehicle);
-                        //display the vehicle that that is in the car list along with the remaining spots.
-
-
                     }
-
                 }
             }
-
            // System.out.println(parkingSpot);
             return "";
         });
-
-
     }
-
-
 }
 
 
