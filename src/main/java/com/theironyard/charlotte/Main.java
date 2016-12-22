@@ -13,8 +13,6 @@ public class Main {
     private static ArrayList<ParkingLot> parkingSpot = new ArrayList<>();
 
 
-
-
     private static JsonParser parser = new JsonParser();
     private static JsonSerializer serializer = new JsonSerializer();
 
@@ -40,14 +38,11 @@ public class Main {
         //vehicles.add();
 
 
-
         //create the lot
-        parkingSpot.add(new ParkingLot(1, 15, 5,vehiclesLot1));
-        parkingSpot.add(new ParkingLot(2, 15, 7,vehiclesLot2));
-        parkingSpot.add(new ParkingLot(3, 15, 10,vehiclesLot3));
-        parkingSpot.add(new ParkingLot(4, 15, 12,vehiclesLot4));
-
-
+        parkingSpot.add(new ParkingLot(1, 15, 5, vehiclesLot1));
+        parkingSpot.add(new ParkingLot(2, 15, 7, vehiclesLot2));
+        parkingSpot.add(new ParkingLot(3, 15, 10, vehiclesLot3));
+        parkingSpot.add(new ParkingLot(4, 15, 12, vehiclesLot4));
 
 
         //shows the lots that are there populated with info
@@ -75,12 +70,14 @@ public class Main {
                         lot.setCapacity(lot.getCapacity() - newVehicle.getSize());
                         System.out.println("you have a parking spot");
 
-                        //adds the vehicle to the specified id lot in the parkinglot
+                        // adding a vehilce to the araylist of cars
+//                        lot.getVehicle().add(newVehicle);
+                        lot.addVehicleToLot(newVehicle);
+                        return lot.toString();
+                        //return serializer.deep(true).serialize(lot.getVehicle());
 
 
-                        lot.getVehicle().add(lot.getId(), newVehicle);
-
-                        System.out.println(lot.getVehicle().get(lot.getId()) + " " +  lot.getCapacity());
+                        //lot.getVehicle().add(lot.getId(), newVehicle);
                         //display the vehicle that that is in the car list along with the remaining spots.
 
 
@@ -89,9 +86,11 @@ public class Main {
                 }
             }
 
-
+            System.out.println(parkingSpot);
             return "";
         });
+
+
     }
 
 

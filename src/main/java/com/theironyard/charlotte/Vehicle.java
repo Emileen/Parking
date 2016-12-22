@@ -4,6 +4,8 @@ package com.theironyard.charlotte;
  * Created by emileenmarianayagam on 12/20/16.
  */
 public class Vehicle {
+
+
     private String make;
     private String model;
     private int size;
@@ -51,7 +53,16 @@ public class Vehicle {
         this.cost = cost;
     }
 
-
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", size=" + size +
+                ", cost=" + cost +
+                ", id=" + id +
+                '}';
+    }
 
 
 }

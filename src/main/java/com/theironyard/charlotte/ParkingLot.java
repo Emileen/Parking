@@ -8,6 +8,9 @@ import java.util.ArrayList;
 public class ParkingLot {
 
     private int id;
+
+
+
     private int capacity;
     private int rate;
     private ArrayList<Vehicle> vehicle = new ArrayList<>();
@@ -53,5 +56,21 @@ public class ParkingLot {
     }
 
 
+    // you are creating a vehicle and adding the new vehicle into the arraylist
+    public void addVehicleToLot(Vehicle currentVehicle) {
+        vehicle.add(currentVehicle);
+    }
+
+
+    //overriding the object value to string value
+    @Override
+    public String toString() {
+        return "ParkingLot{" +
+                "id=" + id +
+                ", capacity=" + capacity +
+                ", rate=" + rate +
+                ", vehicle=" + vehicle +
+                '}';
+    }
 
 }
