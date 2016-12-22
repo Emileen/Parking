@@ -51,4 +51,7 @@ public class ParkingLot {
     public void setVehicle(ArrayList<Vehicle> vehicle) {
         this.vehicle = vehicle;
     }
+
+
+
 }

@@ -77,6 +77,7 @@ public class Main {
 
                         //adds the vehicle to the specified id lot in the parkinglot
 
+
                         lot.getVehicle().add(lot.getId(), newVehicle);
 
                         System.out.println(lot.getVehicle().get(lot.getId()) + " " +  lot.getCapacity());
