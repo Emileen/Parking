@@ -8,9 +8,6 @@ import java.util.ArrayList;
 public class ParkingLot {
 
     private int id;
-
-
-
     private int capacity;
     private int rate;
     private ArrayList<Vehicle> vehicle = new ArrayList<>();
@@ -21,7 +18,9 @@ public class ParkingLot {
         this.rate = rate;
         this.vehicle = vehicle;
     }
-    public ParkingLot(){}
+
+    public ParkingLot() {
+    }
 
     public int getId() {
         return id;

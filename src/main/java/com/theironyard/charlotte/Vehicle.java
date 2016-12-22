@@ -5,19 +5,30 @@ package com.theironyard.charlotte;
  */
 public class Vehicle {
 
-
     private String make;
     private String model;
     private int size;
     private int cost;
-    private int id;
+    private int lotId;
+
+
+    public Vehicle(String make, String model, int size, int cost, int lotId) {
+        this.make = make;
+        this.model = model;
+        this.size = size;
+        this.cost = cost;
+        this.lotId = lotId;
+    }
+
+    public Vehicle() {
+    }
 
     public int getId() {
-        return id;
+        return lotId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.lotId = id;
     }
 
 
@@ -60,7 +71,7 @@ public class Vehicle {
                 ", model='" + model + '\'' +
                 ", size=" + size +
                 ", cost=" + cost +
-                ", id=" + id +
+                ", id=" + lotId +
                 '}';
     }
 

@@ -70,10 +70,14 @@ public class Main {
                         lot.setCapacity(lot.getCapacity() - newVehicle.getSize());
                         System.out.println("you have a parking spot");
 
-                        // adding a vehilce to the araylist of cars
-//                        lot.getVehicle().add(newVehicle);
+                        //create a new vehicle using the method in the parking-lot class
                         lot.addVehicleToLot(newVehicle);
+
                         return lot.toString();
+
+
+                        //return lot.toString();
+
                         //return serializer.deep(true).serialize(lot.getVehicle());
 
 
@@ -86,7 +90,7 @@ public class Main {
                 }
             }
 
-            System.out.println(parkingSpot);
+           // System.out.println(parkingSpot);
             return "";
         });
 
